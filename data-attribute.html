@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Attributes Practice</title>
+</head>
+<body>
+
+  <h2>Exercise 1 - Single Button</h2>
+  <button class="btn" data-name="Ali">Click Me</button>
+
+  <h2>Exercise 2 - Multiple Attributes</h2>
+  <button class="info-btn"
+    data-name="Bilal"
+    data-age="22"
+    data-city="Rawalpindi">
+    Get Info
+  </button>
+
+  <h2>Exercise 3 - Multiple Buttons</h2>
+  <button class="product" data-id="1">Product 1</button>
+  <button class="product" data-id="2">Product 2</button>
+  <button class="product" data-id="3">Product 3</button>
+
+  <script>
+
+    // Exercise 1
+    // Clicking this button prints the name stored in data-name
+    const btn = document.querySelector('.btn');
+    btn.addEventListener('click', () => {
+      console.log(btn.dataset.name);
+    });
+
+    // Exercise 2
+    // Clicking this button prints name, age and city together
+    const infoBtn = document.querySelector('.info-btn');
+    infoBtn.addEventListener('click', () => {
+      console.log(`${infoBtn.dataset.name} ${infoBtn.dataset.age} ${infoBtn.dataset.city}`);
+    });
+
+    // Exercise 3
+    // Each product button prints its own ID when clicked
+    const productBtns = document.querySelectorAll('.product');
+    productBtns.forEach(product => {
+      product.addEventListener('click', () => {
+        console.log(product.dataset.id);
+      });
+    });
+
+  </script>
+
+</body>
+</html>
