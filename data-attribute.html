@@ -46,6 +46,20 @@
       });
     });
 
+
+    // Exercise 4 - Store clicked IDs in array
+   const clickedIds = [];
+
+   const productBtns2 = document.querySelectorAll('.product');
+
+  productBtns2.forEach(product => {
+  product.addEventListener('click', () => {
+    const id = product.dataset.id;
+    clickedIds.push(id);
+    console.log(clickedIds);
+  });
+});
+
   </script>
 
 </body>
